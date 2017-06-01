@@ -2,7 +2,7 @@ package mobileTransportationA;
 
 
 public abstract class VehicleA {
-
+	//should set these to 0s, falses, and ""s
 	private int speed = 60;
 	private boolean started = false;
 	private boolean accelerating = false;
@@ -19,10 +19,24 @@ public abstract class VehicleA {
 		model = mod;
 	}
 	public VehicleA (){
-		
+		speed = 60;
+		started = false;
+		accelerating = false;
+		color = "Black";
+		model = "Masarati";
 	}
 	
 	public int getSpeed(){
+		if(accelerating ==true)
+		{
+			speed += 5;
+		}
+		else{
+			speed -=5;
+		}
+		if(started == false ){
+			return 0;
+		}
 		return speed;
 	}
 	
